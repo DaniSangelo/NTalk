@@ -1,12 +1,20 @@
 const express = require('express');
 const path = require('path');
 const consign = require('consign');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const expressSession = require('express-session');
+
 const app = express();
 
 const dirName = __dirname;
 
 app.set('views', path.join(dirName, 'views'));
 app.set('view engine', 'ejs');
+app.use(cookieParser('ntalk'));
+app.use(expressSession());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(dirName, 'public')));
 
 consign({})
