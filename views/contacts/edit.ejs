@@ -1,0 +1,15 @@
+<%- include ('../header'); %>
+<header>
+	<h2>NTalk - Edit Contacts </h2>
+</header>
+<section>
+	<form action="/contact/<%- id %>?_method=put" method="post">
+		<label>Nome:</label>
+		<input type="text" name="contact[name]" value="<%- contact.name %>">
+		<label>Email:</label>
+		<input type="text" name="contact[email]" value="<%- contact.email %>">
+		<button type="submit">Save</button>
+	</form>
+</section>
+<%- include ('../exit') %>
+<%- include ('../footer') %>

@@ -3,6 +3,7 @@ const path = require('path');
 const consign = require('consign');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const methodOverride = require('method-override');
 const expressSession = require('express-session');
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(cookieParser('ntalk'));
 app.use(expressSession());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+app.use(methodOverride('_method')); /* Allows a route to be used by distinct http methods */
 app.use(express.static(path.join(dirName, 'public')));
 
 consign({})
