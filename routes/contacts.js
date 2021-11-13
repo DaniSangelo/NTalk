@@ -1,3 +1,4 @@
+const authenticate = require('../middlewares/authenticator');
 module.exports = (app) => {
 	const { contacts } = app.controllers;
 	app.get('/contacts', authenticate, contacts.index);

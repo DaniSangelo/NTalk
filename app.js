@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
 const expressSession = require('express-session');
+const error = require('./middlewares/error');
 
 const app = express();
 
@@ -24,6 +25,9 @@ consign({})
 	.then('controllers')
 	.then('routes')
 	.into(app);
+
+app.use(error.notFound);
+app.use(error.serverError);
 
 app.listen(3000, () => {
 	console.log('NTalk is running');
