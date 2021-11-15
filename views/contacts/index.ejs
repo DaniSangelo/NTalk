@@ -28,7 +28,7 @@
 							<%- contact.email %>
 						</td>
 						<td>
-							-
+							<span id="notify_<%- contact.email %>">Offline</span>
 						</td>
 						<td>
 							<a href="/contact/<%- index %>"> Details </a>
@@ -39,6 +39,6 @@
 			</tbody>
 		</table>
 	</section>
-
+	<%- include('notify_script'); %>
 	<%- include('../exit.ejs'); %>
 	<%- include('../footer.ejs'); %>
