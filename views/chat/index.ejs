@@ -1,0 +1,22 @@
+<%- include('../header.ejs'); %>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	const socket = io();
+	socket.on('send-client', (msg) => {
+		document.getElementById('chat').innerHTML += msg;
+	});
+	const send = () => {
+		const msg = document.getElementById('msg').value;
+		socket.emit('send-server', msg);
+	};
+</script>
+<header>
+	<h2>NTalk - Chat</h2>
+</header>
+<section>
+	<pre id="chat"></pre>
+	<input type="text" id="msg" placeholder="Type your message">
+	<button onclick=send();>Send</button>
+</section>
+<%- include('../exit.ejs'); %>
+<%- include('../footer.ejs'); %>

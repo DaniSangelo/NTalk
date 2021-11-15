@@ -1,10 +1,10 @@
 const authenticate = require('../middlewares/authenticator');
 module.exports = (app) => {
-	const { contacts } = app.controllers;
-	app.get('/contacts', authenticate, contacts.index);
-	app.get('/contacts/:id', authenticate, contacts.show);
-	app.post('/contacts', authenticate, contacts.create);
-	app.get('/contacts/:id/edit', authenticate, contacts.edit);
-	app.put('/contacts/:id', authenticate, contacts.update);
-	app.delete('/contacts/:id', authenticate, contacts.destroy);
+	const { contact } = app.controllers;
+	app.get('/contacts', authenticate, contact.index);
+	app.get('/contact/:id', authenticate, contact.show);
+	app.post('/contact', authenticate, contact.create);
+	app.get('/contact/:id/edit', authenticate, contact.edit);
+	app.put('/contact/:id', authenticate, contact.update);
+	app.delete('/contact/:id', authenticate, contact.destroy);
 }

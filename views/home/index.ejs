@@ -1,13 +1,13 @@
-		<%- include('../header.ejs'); %>
-		<header>
-			<h1> NTalk </h1>
-			<h4> Welcome! </h4>
-		</header>
-		<section>
-			<form action = "/signin" method="post">
-				<input type = "text" name = "user[name]" placeholder="Name"><br>
-				<input type = "text" name = "user[email]" placeholder="Email"><br>
-				<button type = "submit"> Sign in </button>
-			</form>
-		</section>
-		<%- include('../footer.ejs'); %>
+<%- include('../header.ejs'); %>
+<header>
+	<h1> NTalk </h1>
+	<h4> Welcome! </h4>
+</header>
+<section>
+	<form action = "/signin" method="post">
+		<input type = "text" name = "user[name]" placeholder="Name"><br>
+		<input type = "text" name = "user[email]" placeholder="Email"><br>
+		<button type = "submit"> Sign in </button>
+	</form>
+</section>
+<%- include('../footer.ejs'); %>
